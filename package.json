@@ -1,0 +1,26 @@
+{
+  "name": "modern-otp-input-v2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A polished one-time-code input with a sliding focus plate, Mail autofill, attempt feedback, and a verified pill.",
+  "homepage": "https://otp-input-v2.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theShipar/modern-otp-input-v2.git"
+  },
+  "author": "Abtahi Shipar",
+  "license": "MIT",
+  "keywords": [
+    "otp",
+    "one-time-code",
+    "verification",
+    "micro-interaction",
+    "vanilla-js",
+    "ui"
+  ],
+  "scripts": {
+    "dev": "node serve.cjs",
+    "start": "node serve.cjs",
+    "build": "node build.cjs"
+  }
+}

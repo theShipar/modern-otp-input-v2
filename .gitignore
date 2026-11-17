@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.DS_Store
+
+# Capture and exploration artifacts
+frames/
+hi/
+seq/
+*.raw
+*.log
+/_plate-*.html
+/*.png
+/_plate-test.html
+/_plate-matrix.html
+
+# Earlier exploration build
+/otp.css
+/otp.js

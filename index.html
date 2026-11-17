@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#F0F2EF">
+  <meta name="color-scheme" content="light">
+  <title>Modern OTP V2 — TheShipar</title>
+  <meta name="description" content="Check your email — an animated one-time-code card by TheShipar. Sliding focus plate, Mail autofill, scan verification, attempt countdown and a verified pill.">
+  <link rel="stylesheet" href="./otp-v2.css">
+</head>
+<body>
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg><span>Dark mode</span></button>
+  <a class="creator-link" href="https://shipar.vercel.app/"><span>Created by</span> TheShipar</a>
+
+  <main class="stage">
+    <section class="auth-card" id="card" data-copy="idle" data-att="3" aria-labelledby="cardTitle">
+      <div class="icon-tile" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2.4"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </div>
+
+      <div class="copy">
+        <h1 class="title" id="cardTitle">
+          <span class="t t-idle">Check your email</span>
+          <span class="t t-success">Welcome back, Abtahi</span>
+        </h1>
+        <div class="subs">
+          <p class="s s-idle">Enter the code we sent to <span class="email">abtahi.shipar@gmail.com</span></p>
+          <p class="s s-error"><span class="try">That code didn't work <span class="mid">·</span> <span class="att-n"><span class="att-val">3</span></span> <span class="att-w">attempts</span> <span class="att-tail">left</span></span><span class="no-try">Too many attempts <span class="mid">·</span> Try again later</span></p>
+          <p class="s s-success">Signed in. Opening your workspace...</p>
+        </div>
+      </div>
+
+      <div class="field" id="field" data-phase="">
+        <input class="otp" id="otp" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="6-digit verification code">
+        <div class="cells" aria-hidden="true">
+          <div class="cell"><span class="digit"></span></div>
+          <div class="cell"><span class="digit"></span></div>
+          <div class="cell"><span class="digit"></span></div>
+          <span class="sep"></span>
+          <div class="cell"><span class="digit"></span></div>
+          <div class="cell"><span class="digit"></span></div>
+          <div class="cell"><span class="digit"></span></div>
+        </div>
+        <div class="plate" id="plate" aria-hidden="true"><span class="caret"></span></div>
+        <div class="verified" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m5 12.5 4.4 4.4L19 7.2"/></svg>
+          <span>Verified</span>
+        </div>
+      </div>
+
+      <div class="foot" id="foot">
+        <div class="foot-line">
+          <p class="f f-default">Didn't get a code? <button class="resend" id="resend" type="button" disabled><span class="wait">Resend in <span id="secs">30</span>s</span><span class="go">Resend code</span></button></p>
+          <p class="f f-success">Not you? <button class="switch" id="switch" type="button">Switch account</button></p>
+        </div>
+        <button class="suggest" id="suggest" type="button" tabindex="-1" aria-label="Use the code 204816 from Mail">
+          <svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.2"/><path d="m21 7.5-8.4 5.3a1.9 1.9 0 0 1-2.1 0L2 7.5"/></svg>
+          <span class="from">From Mail</span>
+          <b>204 816</b>
+        </button>
+      </div>
+
+      <p class="sr-only" id="live" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="./otp-v2.js"></script>
+</body>
+</html>
